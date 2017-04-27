@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tables Page</title>
+
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<form>
+  <div class="form-group">
+    <label for="formGroupExampleInput">you must enter your name</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">you must enter a link to your picture</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+  </div>
+</form>
+
+<div class="container">
+  <h2>you must answer all questions</h2>
+  <h3>choose an answer form 1 to 5 where 1 means that you dont agree while 5 means you strongly agree</h3>
+   
+   <h4>question 1: do you have type A personality</h4>
+    <select class="form-control" class="awesome" id="q1">
+      <option value="" ></option>
+      <option value="1" >1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+     <option value="5">5</option>
+    </select>
+
+   <h4>question 2: do you have type A personality</h4>
+    <select class="form-control" class="awesome" id="q2">
+    <option value="" ></option>
+      <option value="1" >1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+     <option value="5">5</option>
+    </select>
+
+       <h4>question 3: do you have type A personality</h4>
+    <select class="form-control" class="awesome" id="q3">
+    <option value="" ></option>
+      <option value="1" >1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+     <option value="5">5</option>
+    </select>
+
+       <h4>question 4: do you have type A personality</h4>
+    <select class="form-control" class="awesome" id="q4">
+    <option value="" ></option>
+      <option value="1" >1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+     <option value="5">5</option>
+    </select>
+
+       <h4>question 5: do you have type A personality</h4>
+    <select class="form-control" class="awesome" id="q5">
+    <option value="" ></option>
+      <option value="1" >1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+     <option value="5">5</option>
+    </select>
+
+       <h4>question 6: do you have type A personality</h4>
+    <select class="form-control" class="awesome" id="q6">
+    <option value="" ></option>
+      <option value="1" >1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+     <option value="5">5</option>
+    </select>
+
+       <h4>question 7: do you have type A personality</h4>
+    <select class="form-control" class="awesome" id="q7">
+    <option value="" ></option>
+      <option value="1" >1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+     <option value="5">5</option>
+    </select>
+
+       <h4>question 8: do you have type A personality</h4>
+    <select class="form-control" class="awesome" id="q8">
+    <option value="" ></option>
+      <option value="1" >1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+     <option value="5">5</option>
+    </select>
+
+       <h4>question 9: do you have type A personality</h4>
+    <select class="form-control" class="awesome" id="q9">
+    <option value="" ></option>
+      <option value="1" >1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+     <option value="5">5</option>
+    </select>
+
+       <h4>question 10: do you have type A personality</h4>
+    <select class="form-control" class="awesome" id="q10">
+    <option value="" ></option>
+      <option value="1" >1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+     <option value="5">5</option>
+    </select>
+
+<input type="submit" class="btn btn-info" value="Submit Button" id="submiting">
+
+
+    <footer class="footer">
+      <div class="container">
+        <p>Control Panel</p>
+        <p><a href="/api/friends">API friends Link</a>| <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+      </div>
+    </footer>
+    </div>
+</body>
+
+<div class = "container" id="hidden">
+  <img id="image">
+  <strong id="strong"></strong>
+
+</div>
+
+<script type="text/javascript">
+    $("#submiting").on("click", function(event) {
+      event.preventDefault();
+
+      var currentURL = window.location.origin;
+      var scores =[$('#q1').val(),$('#q2').val(),$('#q3').val(),$('#q4').val(),$('#q5').val(),         $('#q6').val(),$('#q7').val(),$('#q8').val(),$('#q9').val(),$('#q10').val()];
+
+      var userInput = {name: $("#formGroupExampleInput").val().trim(),photo: $("#formGroupExampleInput2").val().trim(),scores};
+
+      console.log(userInput);
+     for (var i = 0; i < scores.length; i++) {
+      if (scores[i] === ""){
+        alert('please answer all the questions')
+      }else{
+     
+        $.post(currentURL + "/api/friends", userInput, function(data) {
+          console.log(data);
+          console.log('xo');
+          $("#strong").text(data.name);
+          $("#image").attr("src", data.photo);
+
+        });
+   }
+   }
+})
+
+
+</script>
+</html>
