@@ -24,10 +24,10 @@
 </form>
 
 <div class="container">
-  <h2>you must answer all questions</h2>
+  <h2>you must answer all questions for your animal match to show up</h2>
   <h3>choose an answer form 1 to 5 where 1 means that you dont agree while 5 means you strongly agree</h3>
    
-   <h4>question 1: do you have type A personality</h4>
+   <h4>question 1: do you have type A personality?</h4>
     <select class="form-control" class="awesome" id="q1">
       <option value="" ></option>
       <option value="1" >1</option>
@@ -37,7 +37,7 @@
      <option value="5">5</option>
     </select>
 
-   <h4>question 2: do you have type A personality</h4>
+   <h4>question 2: are you sneaky?</h4>
     <select class="form-control" class="awesome" id="q2">
     <option value="" ></option>
       <option value="1" >1</option>
@@ -47,7 +47,7 @@
      <option value="5">5</option>
     </select>
 
-       <h4>question 3: do you have type A personality</h4>
+       <h4>question 3: are you honest?</h4>
     <select class="form-control" class="awesome" id="q3">
     <option value="" ></option>
       <option value="1" >1</option>
@@ -57,7 +57,7 @@
      <option value="5">5</option>
     </select>
 
-       <h4>question 4: do you have type A personality</h4>
+       <h4>question 4: do you ever lie?</h4>
     <select class="form-control" class="awesome" id="q4">
     <option value="" ></option>
       <option value="1" >1</option>
@@ -67,7 +67,7 @@
      <option value="5">5</option>
     </select>
 
-       <h4>question 5: do you have type A personality</h4>
+       <h4>question 5:do you smile or frown most of the time? </h4>
     <select class="form-control" class="awesome" id="q5">
     <option value="" ></option>
       <option value="1" >1</option>
@@ -77,7 +77,7 @@
      <option value="5">5</option>
     </select>
 
-       <h4>question 6: do you have type A personality</h4>
+       <h4>question 6: do you like to trip people?</h4>
     <select class="form-control" class="awesome" id="q6">
     <option value="" ></option>
       <option value="1" >1</option>
@@ -87,7 +87,7 @@
      <option value="5">5</option>
     </select>
 
-       <h4>question 7: do you have type A personality</h4>
+       <h4>question 7: can you control your anger?</h4>
     <select class="form-control" class="awesome" id="q7">
     <option value="" ></option>
       <option value="1" >1</option>
@@ -97,7 +97,7 @@
      <option value="5">5</option>
     </select>
 
-       <h4>question 8: do you have type A personality</h4>
+       <h4>question 8: what meatters the most to you wealth or health?</h4>
     <select class="form-control" class="awesome" id="q8">
     <option value="" ></option>
       <option value="1" >1</option>
@@ -107,7 +107,7 @@
      <option value="5">5</option>
     </select>
 
-       <h4>question 9: do you have type A personality</h4>
+       <h4>question 9: do you like to help others?</h4>
     <select class="form-control" class="awesome" id="q9">
     <option value="" ></option>
       <option value="1" >1</option>
@@ -117,7 +117,7 @@
      <option value="5">5</option>
     </select>
 
-       <h4>question 10: do you have type A personality</h4>
+       <h4>question 10: can you give even when you desperately in need?</h4>
     <select class="form-control" class="awesome" id="q10">
     <option value="" ></option>
       <option value="1" >1</option>
@@ -133,7 +133,7 @@
     <footer class="footer">
       <div class="container">
         <p>Control Panel</p>
-        <p><a href="/api/friends">API friends Link</a>| <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+        <p><a href="/api/friends">API friends Link</a>| <a href="https://github.com/luckyanter/friendfinder">GitHub Repo</a></p>
       </div>
     </footer>
     </div>
@@ -167,9 +167,9 @@
      }
        if (ready === true) {
         $.post(currentURL + "/api/friends", userInput, function(data) {
-          console.log(data);
-          console.log('xo');
-          $("#strong").text(data.name);
+          // console.log(data);
+          // console.log('xo');
+          $("#strong").text("your animal match is the " + data.name);
           $("#image").attr("src", data.photo);
 
         });

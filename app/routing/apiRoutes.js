@@ -1,6 +1,7 @@
 
 var friends = require("../data/friends");
 // console.log(friends);
+
 module.exports = function(app) {
 
   app.get("/api/friends", function(req, res) {
@@ -10,29 +11,27 @@ module.exports = function(app) {
 
   app.post("/api/friends", function(req, res) {
 
-    var ideal = {name: "", photo: "", diff: 50};
-
+    var ideal = {name: "", photo: "",total: "", number: 50};
     var userInput = req.body;
-    var sumOfDiff = 0;
-    var k = 0;
-    console.log(friends[k].scores);
-    console.log('==========');
-    console.log(userInput.scores)
-    function run(k){
-      if (k < friends.length){
-          for (var i = 0; i < friends[k].scores.length; i++) {
-            sumOfDiff += Math.abs(parseInt(friends[k].scores[i]) - parseInt(userInput.scores[i]));
-            console.log(sumOfDiff);
-            if (sumOfDiff < ideal.diff){
-              ideal = {name: friends[k].name,photo: friends[k].photo, diff: sumOfDiff};
-            }
-        k++;
-        run(k);
-      }
-
+    userInput.total = 0;
+    for (var i = 0; i < userInput.scores.length; i++) {
+      var number = [];
+      number[i] = parseInt(userInput.scores[i]);
+      userInput.total += number[i];
     }
-  }
-  run(0);
+    var bestNumber = 0;
+    console.log(userInput.scores)
+    for (var k = 0; k < friends.length; k++) {
+        bestNumber = Math.abs(friends[k].total - userInput.total);
+        console.log(bestNumber);
+        if (bestNumber < ideal.number){
+            ideal = {name: friends[k].name, photo: friends[k].photo,total:friends[k].total,
+              number: bestNumber};
+            // console.log(ideal);
+        }
+    }
+
+     
     friends.push(userInput);
     res.json(ideal);
 
